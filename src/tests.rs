@@ -527,6 +527,11 @@ fn links() {
 }
 
 #[test]
+fn links_handle_char_0c_in_destination() {
+    html("[](\u{0c})", "<p><a href=\"%0C\"></a></p>\n");
+}
+
+#[test]
 fn images() {
     html(
         concat!("I am ![eating [things](/url)](http://i.imgur.com/QqK1vq7.png).\n"),

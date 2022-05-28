@@ -13,7 +13,7 @@ html_block_start_1 = { "<" ~ ("script" | "pre" | "style") ~ (" " | "\t" | "\x0b"
 html_block_start_4 = { "<!" ~ 'A'..'Z' }
 html_block_start_6 = { "<" ~ "/"? ~ ("address" | "article" | "aside" | "base" | "basefont" | "blockquote" | "body" | "caption" | "center" | "col" | "colgroup" | "dd" | "details" | "dialog" | "dir" | "div" | "dl" | "dt" | "fieldset" | "figcaption" | "figure" | "footer" | "form" | "frame" | "frameset" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "head" | "header" | "hr" | "html" | "iframe" | "legend" | "li" | "link" | "main" | "menu" | "menuitem" | "nav" | "noframes" | "ol" | "optgroup" | "option" | "p" | "param" | "section" | "source" | "title" | "summary" | "table" | "tbody" | "td" | "tfoot" | "th" | "thead" | "title" | "tr" | "track" | "ul") ~ (" " | "\t" | "\x0b" | "\x0c" | "\r" | "\n" | "/>" | ">") }
 
-space_char = _{ " " | "\t" | "\x0b" | "\x0c" | "\r" | "\n" }
+space_char = _{ " " | "\t" | "\x0b" | "\r" | "\n" }
 tag_name = _{ ('A'..'Z' | 'a'..'z') ~ ('A'..'Z' | 'a'..'z' | '0'..'9' | "-")* }
 close_tag = _{ "/" ~ tag_name ~ space_char* ~ ">" }
 attribute_name = _{ ('a'..'z' | 'A'..'Z' | "_" | ":") ~ ('a'..'z' | 'A'..'Z' | '0'..'9' | ":" | "." | "_" | "-")* }
